@@ -1,0 +1,24 @@
+#+TITLE: Configuration memo for a new ubuntu
+
+* Aliases
+#+BEGIN_SRC 
+alias bashrc='emacs -nw ~/.bashrc'
+alias egrep='egrep --color=auto'
+alias emacs='emacs -nw'
+alias er='cd ..'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+alias sba='source bin/activate'
+alias sros='source devel/setup.bash'
+alias virtualenv3='virtualenv -p python3'
+#+END_SRC
+
+* deb packages
+
+#+BEGIN_SRC bash
+sudo apt install emacs ncdu tree git
+#+END_SRC
