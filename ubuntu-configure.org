@@ -17,8 +17,49 @@ alias sros='source devel/setup.bash'
 alias virtualenv3='virtualenv -p python3'
 #+END_SRC
 
-* deb packages
+* Deb packages
 
 #+BEGIN_SRC bash
 sudo apt install emacs ncdu tree git
+#+END_SRC
+
+
+ 
+* Emacs configuration
+This configuration should be put in ~/.emacs.d/init.el .
+#+BEGIN_SRC 
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+;; Forces the messages to 0, and kills the *Messages* buffer - thus disabling it on startup.
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
+;; Disabled *Completions*
+(add-hook 'minibuffer-exit-hook
+	  '(lambda ()
+	     (let ((buffer "*Completions*"))
+	       (and (get-buffer buffer)
+		    (kill-buffer buffer)))))
+(setq make-backup-files nil)
+(global-linum-mode t)
+(load "~/Documents/emacs/org-bullets.el")
+(require 'org-bullets)
+(add-hook 'org-mode-hook 'org-bullets-mode)
+
+;; Hide leading stars
+(setq org-startup-indented t
+      org-hide-leading-stars t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-hide ((t (:foreground "black")))))
 #+END_SRC
