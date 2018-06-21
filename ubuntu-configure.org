@@ -18,13 +18,9 @@ alias virtualenv3='virtualenv -p python3'
 #+END_SRC
 
 * Deb packages
-
 #+BEGIN_SRC bash
-sudo apt install emacs ncdu tree git
-#+END_SRC
-
-
- 
+sudo apt install emacs ncdu tree git python3-dev
+#+END_SRC 
 * Emacs configuration
 This configuration should be put in ~/.emacs.d/init.el .
 #+BEGIN_SRC 
@@ -43,23 +39,4 @@ This configuration should be put in ~/.emacs.d/init.el .
 		    (kill-buffer buffer)))))
 (setq make-backup-files nil)
 (global-linum-mode t)
-(load "~/Documents/emacs/org-bullets.el")
-(require 'org-bullets)
-(add-hook 'org-mode-hook 'org-bullets-mode)
-
-;; Hide leading stars
-(setq org-startup-indented t
-      org-hide-leading-stars t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-hide ((t (:foreground "black")))))
 #+END_SRC
