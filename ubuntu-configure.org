@@ -15,6 +15,7 @@ alias ls='ls --color=auto'
 alias sba='source bin/activate'
 alias sros='source devel/setup.bash'
 alias virtualenv3='virtualenv -p python3'
+alias aliases='emacs ~/.bash_aliases'
 #+END_SRC
 
 * Deb packages
