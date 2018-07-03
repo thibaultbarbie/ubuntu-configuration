@@ -20,7 +20,7 @@ alias aliases='emacs ~/.bash_aliases'
 
 * Deb packages
 #+BEGIN_SRC bash
-sudo apt install emacs ncdu tree git python3-dev
+sudo apt install emacs ncdu tree git python3-dev texlive-full
 #+END_SRC 
 * Emacs configuration
 This configuration should be put in ~/.emacs.d/init.el .
