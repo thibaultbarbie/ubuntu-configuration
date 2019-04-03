@@ -1,10 +1,16 @@
 #+TITLE: Configuration memo for a new ubuntu
 
-* Aliases
+* .zshrc
 #+BEGIN_SRC 
-alias bashrc='emacs -nw ~/.bashrc'
+export ZSH="/home/thibault/.oh-my-zsh"
+ZSH_THEME="spaceship"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+source /opt/ros/melodic/setup.zsh
+
+alias zshrc='emacs ~/.zshrc'
 alias egrep='egrep --color=auto'
-alias emacs='emacs -nw'
 alias er='cd ..'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
@@ -13,15 +19,17 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias ls='ls --color=auto'
 alias sba='source bin/activate'
-alias sros='source devel/setup.bash'
+alias sros='source devel/setup.zsh'
 alias virtualenv3='virtualenv -p python3'
 alias aliases='emacs ~/.bash_aliases'
 #+END_SRC
 
 * Deb packages
 #+BEGIN_SRC bash
-sudo apt install emacs ncdu tree git python3-dev texlive-full zsh
-#+END_SRC 
+sudo apt install terminator
+sudo apt install emacs ncdu tree git python3-dev texlive-full zsh net-tools glances curl
+#+END_SRC
+ 
 * Emacs configuration
 This configuration should be put in ~/.emacs.d/init.el .
 #+BEGIN_SRC 
@@ -29,10 +37,8 @@ This configuration should be put in ~/.emacs.d/init.el .
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
-;; Forces the messages to 0, and kills the *Messages* buffer - thus disabling it on startup.
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
-;; Disabled *Completions*
 (add-hook 'minibuffer-exit-hook
 	  '(lambda ()
 	     (let ((buffer "*Completions*"))
@@ -40,4 +46,11 @@ This configuration should be put in ~/.emacs.d/init.el .
 		    (kill-buffer buffer)))))
 (setq make-backup-files nil)
 (global-linum-mode t)
+(custom-set-variables
+ '(custom-enabled-themes (quote (deeper-blue)))
+ '(inhibit-startup-screen t)
+ '(package-selected-packages (quote (magit))))
+(custom-set-faces)
+
+(setq org-support-shift-select t)
 #+END_SRC
