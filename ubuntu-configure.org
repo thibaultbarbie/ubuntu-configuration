@@ -1,5 +1,13 @@
 #+TITLE: Configuration memo for a new ubuntu
 
+* Deb packages
+#+BEGIN_SRC bash
+sudo apt update
+sudo apt upgrade
+sudo apt install terminator
+sudo apt install emacs ncdu tree git python3-dev texlive-full zsh net-tools glances curl
+#+END_SRC
+ 
 * .zshrc
 #+BEGIN_SRC 
 export ZSH="/home/thibault/.oh-my-zsh"
@@ -23,12 +31,16 @@ alias sros='source devel/setup.zsh'
 alias virtualenv3='virtualenv -p python3'
 alias aliases='emacs ~/.bash_aliases'
 #+END_SRC
-
-* Deb packages
-#+BEGIN_SRC bash
-sudo apt install terminator
-sudo apt install emacs ncdu tree git python3-dev texlive-full zsh net-tools glances curl
-#+END_SRC
- 
+  
 * Emacs configuration
 The init.el configuration file should be put in ~/.emacs.d/ .
+
+After that, we install the packages.
+
+
+#+BEGIN_SRC 
+M-x package-refresh-contents
+M-x package install RET elpy 
+M-x package install RET magit 
+#+END_SRC
+  
