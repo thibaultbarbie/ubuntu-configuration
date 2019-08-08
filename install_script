@@ -3,5 +3,5 @@ sudo apt upgrade
 sudo apt install terminator emacs ncdu tree git python3-dev zsh net-tools glances curl unzip vlc openssh-client openssh-server cmake chromium-browser build-essential 
 sudo apt install texlive-full 
 curl https://sh.rustup.rs -sSf | sh
-mkdir ~/.emacs
-mv init.el ~/.emacs/init.el
+mkdir ~/.emacs.d
+mv init.el ~/.emacs.d/init.el
