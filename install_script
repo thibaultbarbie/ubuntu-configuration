@@ -5,3 +5,4 @@ sudo apt install texlive-full
 curl https://sh.rustup.rs -sSf | sh
 mkdir ~/.emacs.d
 mv init.el ~/.emacs.d/init.el
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
