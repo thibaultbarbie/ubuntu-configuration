@@ -1,10 +1,20 @@
 sudo apt update
 sudo apt upgrade -y
+
+# Install all the package I usually use
 sudo apt install -y terminator emacs ncdu tree git python3-dev zsh net-tools glances curl virtualbox vlc openssh-client openssh-server fonts-powerline cmake chromium-browser build-essential 
+
+# I may want sometime to not need the full latex distribution so I keep it separate
 sudo apt install -y texlive-full 
+
+# Rust install
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# Emacs install
 mkdir ~/.emacs.d
 mv init.el ~/.emacs.d/init.el
+
+# ZSH install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
