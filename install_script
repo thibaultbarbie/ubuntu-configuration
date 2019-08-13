@@ -14,7 +14,7 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 mkdir ~/.emacs.d
 cp init.el ~/.emacs.d/init.el
 mkdir -p ~/.config/systemd/user && cp emacs.service ~/.config/systemd/user/
-systemctl daemon-reload --user
+systemctl enable --user emacs
 systemctl start --user emacs
 
 # ZSH install
