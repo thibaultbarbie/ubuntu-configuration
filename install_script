@@ -2,7 +2,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # Install all the package I usually use
-sudo apt install -y terminator emacs ncdu tree git python3-dev zsh net-tools glances curl virtualbox vlc openssh-client openssh-server fonts-powerline cmake chromium-browser build-essential 
+sudo apt install -y terminator emacs ncdu tree git python3-dev zsh net-tools glances curl virtualbox vlc inkscape openssh-client openssh-server fonts-powerline cmake chromium-browser build-essential 
 
 # Later I may want to not need the full latex distribution so I keep it separate
 sudo apt install -y texlive-full 
