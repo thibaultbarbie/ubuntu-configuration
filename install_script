@@ -4,7 +4,7 @@ sudo apt upgrade -y
 # Install all the package I usually use
 sudo apt install -y terminator emacs ncdu tree git python3-dev zsh net-tools glances curl virtualbox vlc openssh-client openssh-server fonts-powerline cmake chromium-browser build-essential 
 
-# I may want sometime to not need the full latex distribution so I keep it separate
+# Later I may want to not need the full latex distribution so I keep it separate
 sudo apt install -y texlive-full 
 
 # Rust install
@@ -13,6 +13,9 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 # Emacs install
 mkdir ~/.emacs.d
 mv init.el ~/.emacs.d/init.el
+mkdir -p ~/.config/systemd/user && mv emacs.service ~/.config/systemd/user/
+systemctl daemon-reload --user
+systemctl start --user emacs
 
 # ZSH install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
