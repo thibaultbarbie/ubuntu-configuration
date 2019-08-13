@@ -9,6 +9,7 @@ sudo apt install -y texlive-full
 
 # Rust install
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+rustup component add rustfmt
 
 # Emacs install
 mkdir ~/.emacs.d
