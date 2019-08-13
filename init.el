@@ -10,7 +10,7 @@
 
 
 (setq package-list
-    '(elpy magit org-bullets org-ref))
+    '(elpy magit org-bullets org-ref rust-mode))
 
 
 (package-initialize)
