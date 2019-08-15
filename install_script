@@ -2,7 +2,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # Install all the package I usually use
-sudo apt install -y terminator emacs ncdu tree git python3-dev zsh net-tools glances curl virtualbox vlc inkscape openssh-client openssh-server fonts-powerline cmake chromium-browser linux-tools-generic build-essential 
+sudo apt install -y terminator emacs ncdu tree git python3-dev python-pip python3-pip zsh net-tools glances curl virtualbox vlc inkscape openssh-client openssh-server fonts-powerline cmake chromium-browser linux-tools-generic build-essential 
 
 # Later I may want to not need the full latex distribution so I keep it separate
 sudo apt install -y texlive-full 
@@ -25,3 +25,7 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="spaceship"/' ~/.zshrc
 cp .aliases ~/.aliases
 echo "source ~/.aliases" >> ~/.zshrc
+
+# Python pip
+sudo python -m pip install --upgrade pip
+sudo python3 -m pip install --upgrade pip
