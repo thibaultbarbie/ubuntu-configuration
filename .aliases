@@ -8,3 +8,7 @@ alias sros='source devel/setup.zsh'
 alias sba='source bin/activate'
 alias fsize='ls -sh'
 alias virtualenv3='virtualenv -p python3'
+
+meteo() {
+  curl wttr.in/"$1"
+}
