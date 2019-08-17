@@ -7,6 +7,10 @@ sudo apt install -y terminator emacs ncdu tree git python3-dev python-pip python
 # Later I may want to not need the full latex distribution so I keep it separate
 sudo apt install -y texlive-full 
 
+# Git configuration
+git config --global user.name "Thibault"
+git config --global user.email thibault.barbie@free.fr
+
 # Rust install
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 rustup component add rustfmt
