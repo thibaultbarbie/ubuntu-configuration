@@ -22,6 +22,10 @@ mkdir -p ~/.config/systemd/user && cp emacs.service ~/.config/systemd/user/
 systemctl enable --user emacs
 systemctl start --user emacs
 
+# Python pip
+sudo python -m pip install --upgrade pip
+sudo python3 -m pip install --upgrade pip
+
 # ZSH install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
@@ -29,7 +33,3 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="spaceship"/' ~/.zshrc
 cp .aliases ~/.aliases
 echo "source ~/.aliases" >> ~/.zshrc
-
-# Python pip
-sudo python -m pip install --upgrade pip
-sudo python3 -m pip install --upgrade pip
