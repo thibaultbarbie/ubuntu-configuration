@@ -10,7 +10,7 @@
 
 
 (setq package-list
-    '(elpy magit org-bullets org-ref rust-mode flycheck flycheck-rust company lsp-mode lsp-ui ))
+    '(use-package elpy magit org-bullets org-ref rust-mode flycheck flycheck-rust company lsp-mode lsp-ui ))
 
 
 (package-initialize)
