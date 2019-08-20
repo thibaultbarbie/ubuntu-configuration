@@ -10,7 +10,7 @@
 
 
 (setq package-list
-    '(elpy magit org-bullets org-ref rust-mode))
+    '(elpy magit org-bullets org-ref rust-mode flycheck flycheck-rust company lsp-mode lsp-ui ))
 
 
 (package-initialize)
@@ -103,3 +103,27 @@
 (setq org-latex-caption-above nil)
 
 (setq magit-branch-read-upstream-first 'fallback)
+
+(use-package flycheck
+  :hook (prog-mode . flycheck-mode))
+
+(use-package company
+  :hook (prog-mode . company-mode)
+  :config (setq company-tooltip-align-annotations t)
+          (setq company-minimum-prefix-length 1))
+
+(use-package lsp-mode
+  :commands lsp
+  :config (require 'lsp-clients))
+
+(use-package lsp-ui)
+
+(use-package rust-mode
+  :hook (rust-mode . lsp))
+
+;; Add keybindings for interacting with Cargo
+(use-package cargo
+  :hook (rust-mode . cargo-minor-mode))
+
+(use-package flycheck-rust
+  :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
