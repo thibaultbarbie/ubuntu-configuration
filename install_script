@@ -16,6 +16,9 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 rustup component add rustfmt
 
+cargo install ripgrep
+cargo install lsd
+
 # Emacs install
 mkdir ~/.emacs.d
 cp init.el ~/.emacs.d/init.el
