@@ -10,7 +10,7 @@
 
 
 (setq package-list
-    '(use-package elpy magit org-bullets org-ref rust-mode flycheck flycheck-rust company lsp-mode lsp-ui ))
+    '(use-package elpy magit org-bullets org-ref rust-mode racer flycheck flycheck-rust company lsp-mode lsp-ui ))
 
 
 (package-initialize)
@@ -132,3 +132,10 @@
 
 ;; auto revert mode
 (global-auto-revert-mode 1)
+
+(setq racer-cmd "~/.cargo/bin/racer") ;; Rustup binaries PATH
+(setq racer-rust-src-path "~/rust/src") ;; Rust source code PATH
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
