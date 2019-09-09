@@ -128,5 +128,7 @@
 (use-package flycheck-rust
   :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
+(setq rust-rustfmt-bin "~/.cargo/bin/rustfmt")
+
 ;; auto revert mode
 (global-auto-revert-mode 1)
