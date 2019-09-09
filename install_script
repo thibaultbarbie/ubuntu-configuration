@@ -15,6 +15,7 @@ git config --global user.email thibault.barbie@free.fr
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source $HOME/.cargo/env
 rustup component add rustfmt
+git clone https://github.com/rust-lang/rust.git ~/rust
 
 cargo install ripgrep
 cargo install lsd
