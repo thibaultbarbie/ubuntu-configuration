@@ -19,6 +19,7 @@ git clone https://github.com/rust-lang/rust.git ~/rust
 
 cargo install ripgrep
 cargo install lsd
+cargo install hyperfine
 
 # Emacs install
 mkdir ~/.emacs.d
