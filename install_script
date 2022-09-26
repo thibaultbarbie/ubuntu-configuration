@@ -2,9 +2,9 @@ sudo apt update
 sudo apt upgrade -y
 
 # Install all the packages I usually use
-sudo apt install -y terminator emacs ncdu tree git python3-dev python-pip python3-pip net-tools glances 
-sudo apt install -y curl virtualbox vlc inkscape openssh-client openssh-server fonts-powerline cmake 
-sudo apt install -y chromium-browser linux-tools-generic build-essential zsh
+sudo apt install -y terminator emacs ncdu tree git python3-dev python3-pip net-tools glances 
+sudo apt install -y curl virtualbox vlc inkscape openssh-client openssh-server cmake 
+sudo apt install -y chromium-browser linux-tools-generic build-essential 
 sudo apt install -y texlive-full 
 
 # Git configuration
